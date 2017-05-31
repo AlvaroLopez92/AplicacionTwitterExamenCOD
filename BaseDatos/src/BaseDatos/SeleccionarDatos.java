@@ -8,7 +8,7 @@ import java.sql.Statement;
  
 /**
  *
- * @author sqlitetutorial.net
+ * @author alopezcobo
  */
 public class SeleccionarDatos {
  

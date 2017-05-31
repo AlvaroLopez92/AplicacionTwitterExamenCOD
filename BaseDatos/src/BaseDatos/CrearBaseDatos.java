@@ -7,7 +7,7 @@ import java.sql.SQLException;
  
 /**
  *
- * @author sqlitetutorial.net
+ * @author alopezcobo
  */
 public class CrearBaseDatos {
  
