@@ -10,12 +10,7 @@ import java.sql.SQLException;
  * @author alopezcobo
  */
 public class CrearBaseDatos {
- 
-    /**
-     * Connect to a sample database
-     *
-     * @param fileName the database file name
-     */
+    
     public static void createNewDatabase(String fileName) {
     	
         String url = "jdbc:sqlite:" + Constantes.URL_DB+fileName;
