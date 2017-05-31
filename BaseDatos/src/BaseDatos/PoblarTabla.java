@@ -9,16 +9,14 @@ public class PoblarTabla {
 
 	public static void main(String[] args) {
 
-		 // SQLite connection string
         String url = "jdbc:sqlite:"+Constantes.URL_DB+Constantes.NAME_DB;
         
-        // SQL statement for creating a new table
         String sql ="INSERT INTO warehouses VALUES (1, 'Name1',666);"; 
         		
         
         try (Connection conn = DriverManager.getConnection(url);
                 Statement stmt = conn.createStatement()) {
-            // create a new table
+
            boolean allOk= stmt.execute(sql);
            if(allOk)System.out.println("Insertado correctamente");
            
