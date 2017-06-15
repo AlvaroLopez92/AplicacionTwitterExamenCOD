@@ -23,23 +23,8 @@ import twitter4j.conf.ConfigurationBuilder;
  * @author alopezcobo
  */
 public class Conectar {
-    private ConfigurationBuilder cb;
     private Twitter twitter;
     
- 
-
-
-    public void clave(){
-        //Aquí, en el método "clave" se introducen las claves de autenticación para entrar en Twitter.
-            cb = new ConfigurationBuilder();
-            cb.setDebugEnabled(true)
-                    .setOAuthConsumerKey("LvDvh15874uDWrShwe7kBUXPfG")
-                    .setOAuthConsumerSecret("r0xXh4j3juSi11v0OAUCIJVjaunEUTfIsTw0HVAxgUyFyHDzoc")
-                    .setOAuthAccessToken("84733903434762240-vEg6mva8GnITk37oiJlA008xKFUA0M5")
-                    .setOAuthAccessTokenSecret("LnrfJbq0TkvGK2wMUVzDgjssF4q49XhT78dLtS7IaQ9jF");
-            TwitterFactory tf = new TwitterFactory(cb.build());
-            twitter = tf.getInstance();
-    }
 
     public void verTimeLine(){
         //Este método recoge y muestra el contenido de los Timelines.
