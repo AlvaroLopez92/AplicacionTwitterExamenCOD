@@ -26,10 +26,11 @@ public class Conectar {
     private ConfigurationBuilder cb;
     private Twitter twitter;
     
-    /**
-     * Aquí se introducen las clasves de autenticación para entrar en Twitter.
-     */
+ 
+
+
     public void clave(){
+        //Aquí, en el método "clave" se introducen las claves de autenticación para entrar en Twitter.
             cb = new ConfigurationBuilder();
             cb.setDebugEnabled(true)
                     .setOAuthConsumerKey("LvDvh15874uDWrShwe7kBUXPfG")
@@ -41,6 +42,7 @@ public class Conectar {
     }
 
     public void verTimeLine(){
+        //Este método recoge y muestra el contenido de los Timelines.
         List<String> statuses=null;
         String mensaje="Éste es el Timeline \n";
         Status aux=null;
@@ -58,10 +60,9 @@ public class Conectar {
                 mensaje+=aux.getUser().getName()+','+aux.getText()+"\n -- \n";
             }
     }
-    /**
-     * Poner un estado directo en tu perfil.
-     */
+
     public void tuiteando(String latestStatus){
+        //Este método actualiza tu estado en Twitter.
         List<Status> statuses=null;
         try {
             Status status = twitter.updateStatus(latestStatus);
@@ -70,11 +71,10 @@ public class Conectar {
             Logger.getLogger(Conectar.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    /**
-     * Mandar un mensaje directo a alguien deseado a su cuenta de Twitter.
-     */
+
     public void directMenssage(){
         try {
+            //Manda un mensaje directo a alguien a su cuenta de Twitter.
             DirectMessage message;
             message = twitter.sendDirectMessage("Mblanc01","Buenas, un saludo");
             System.out.println("Enviado: "+ message.getText() + " para @" + message.getRecipientScreenName());
@@ -83,11 +83,12 @@ public class Conectar {
         }
     }
     /**
-     * Realizas una busqueda por hastag o palabras y te muestra twits relacionados
-     * con la palabra que escribiste. 
+     * 
      */
     public void buscarTrending(String busqueda){
         try {
+            //Realizas una busqueda por hashtag o palabras y te muestra tweets relacionados
+            //con la palabra que escribiste. 
             Query query = new Query(busqueda);
             QueryResult result = twitter.search(query);
             for (Status status : result.getTweets()) {
