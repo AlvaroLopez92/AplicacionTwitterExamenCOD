@@ -5,6 +5,9 @@
  */
 package aplicaciontwitter;
 
+import javax.swing.JOptionPane;
+import twitter4j.TwitterException;
+import aplicaciontwitter.Conectar;
 /**
  *
  * @author alopezcobo
