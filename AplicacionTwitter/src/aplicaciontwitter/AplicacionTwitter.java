@@ -15,7 +15,7 @@ import aplicaciontwitter.Conectar;
 public class AplicacionTwitter {
 
     public static void main(String[] args) throws TwitterException {
-        // TODO code application logic here
+        // Menú principal
         
         String busqueda,tweet;
         Conectar obj1 = new Conectar();
@@ -25,22 +25,22 @@ public class AplicacionTwitter {
             opciones=Integer.parseInt(JOptionPane.showInputDialog("1- Ver TimeLine y buscar Trending \n2- Tweetear \n3- Enviar Mensaje Directo \n0- Salir"));
                 switch(opciones){
                     case 1:
-                        obj1.clave();
+                        //Opción para ver Timelines
                         obj1.verTimeLine(); 
                         busqueda  =JOptionPane.showInputDialog("Introduce lo que deseas buscar:");
-                        obj1.clave();
                         obj1.buscarTrending(busqueda);
                         break;
                     case 2:
-                        obj1.clave();
+                        //Opción para twittear
                         tweet = JOptionPane.showInputDialog("Introduce un tweet:");
                         obj1.tuiteando(tweet);
                         break;
                     case 3:
-                        obj1.clave();
+                        //Opción paa mandar mensajes directos.
                         obj1.directMenssage();
                         break;
                     case 0:
+                        //Salir.
                         System.exit(0);
                         break;
                     default:
