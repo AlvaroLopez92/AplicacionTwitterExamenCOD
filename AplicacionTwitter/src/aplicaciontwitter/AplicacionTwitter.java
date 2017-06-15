@@ -14,11 +14,39 @@ import aplicaciontwitter.Conectar;
  */
 public class AplicacionTwitter {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws TwitterException {
         // TODO code application logic here
+        
+        String busqueda,tweet;
+        Conectar obj1 = new Conectar();
+                
+        int opciones;
+        do{
+            opciones=Integer.parseInt(JOptionPane.showInputDialog("1- Ver TimeLine y buscar Trending \n2- Tweetear \n3- Enviar Mensaje Directo \n0- Salir"));
+                switch(opciones){
+                    case 1:
+                        obj1.clave();
+                        obj1.verTimeLine(); 
+                        busqueda  =JOptionPane.showInputDialog("Introduce lo que deseas buscar:");
+                        obj1.clave();
+                        obj1.buscarTrending(busqueda);
+                        break;
+                    case 2:
+                        obj1.clave();
+                        tweet = JOptionPane.showInputDialog("Introduce un tweet:");
+                        obj1.tuiteando(tweet);
+                        break;
+                    case 3:
+                        obj1.clave();
+                        obj1.directMenssage();
+                        break;
+                    case 0:
+                        System.exit(0);
+                        break;
+                    default:
+                        JOptionPane.showMessageDialog(null,"Error");
+                }
+            }while(opciones!=0);
     }
     
 }
